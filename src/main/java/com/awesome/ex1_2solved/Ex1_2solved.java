@@ -36,7 +36,7 @@ public class Ex1_2solved extends BaseExamplePeriod {
     public final void operation() {
         // after we reach the desired listSize, just add and remove
         pairs.add(next());
-        pairs.remove(0);
+        pool.release(pairs.remove(0));
     }
 
     @Override
@@ -53,7 +53,7 @@ public class Ex1_2solved extends BaseExamplePeriod {
     }
 
     public static void main(final String args[]) throws InterruptedException {
-        final long runtime = args.length > 1 ? Long.parseLong(args[1]) : BaseExamplePeriod.DEFAULT_RUN_TIME_MSEC;
+        final long runtime = args.length > 0 ? Long.parseLong(args[0]) : BaseExamplePeriod.DEFAULT_RUN_TIME_MSEC;
         Ex1_2solved ex = new Ex1_2solved(runtime);
         ex.run();
         ex.printResults();

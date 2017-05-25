@@ -50,7 +50,7 @@ public class Ex1_2 extends BaseExamplePeriod {
     }
 
     public static void main(final String args[]) throws InterruptedException {
-        final long runtime = args.length > 1 ? Long.parseLong(args[1]) : BaseExamplePeriod.DEFAULT_RUN_TIME_MSEC;
+        final long runtime = args.length > 0 ? Long.parseLong(args[0]) : BaseExamplePeriod.DEFAULT_RUN_TIME_MSEC;
         Ex1_2 ex = new Ex1_2(runtime);
         ex.run();
         ex.printResults();
