@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.plugin-shadow'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21',
+            'org.hdrhistogram:HdrHistogram:2.1.9',
+            'org.jctools:jctools-core:2.0.1'
+
+
+    testCompile 'junit:junit:4.12'
+}
